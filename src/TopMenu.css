@@ -1,0 +1,51 @@
+.top-menu {
+    position: fixed;
+    top: 0;
+    left: 250px; /* Adjusted to account for the sidebar width */
+    height: 50px;
+    background-color: rgb(var(--body-bg-rgb));
+    border-bottom: 1px solid #ccc;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    width: calc(100% - 250px); /* Adjusted to account for the sidebar width */
+    transition: left 0.3s ease, width 0.3s ease;
+  }
+  
+  .search-container {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+  }
+  
+  .search-icon {
+    color: #333;
+    margin-right: 10px;
+  }
+  
+  .search-input {
+    border: none;
+    background-color: #f0f0f0;
+    color: #333;
+    padding: 5px 10px;
+    border-radius: 4px;
+    outline: none;
+  }
+  
+  .menu-icons {
+    display: flex;
+    align-items: center;
+  }
+  
+  .menu-item {
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+    cursor: pointer;
+  }
+  
+  .sidebar.closed ~ .top-menu {
+    left: 60px; /* Adjust for the closed sidebar width */
+    width: calc(100% - 60px); /* Adjust width for the closed sidebar */
+  }
+  
