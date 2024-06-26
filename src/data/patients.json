@@ -1,0 +1,8 @@
+[
+    { "id": 1, "name": "John Doe", "age": 30, "gender": "Male", "condition": "Flu" },
+    { "id": 2, "name": "Jane Smith", "age": 25, "gender": "Female", "condition": "Broken Arm" },
+    { "id": 3, "name": "Michael Johnson", "age": 40, "gender": "Male", "condition": "Headache" },
+    { "id": 4, "name": "Emily Davis", "age": 35, "gender": "Female", "condition": "Fever" },
+    { "id": 5, "name": "David Wilson", "age": 28, "gender": "Male", "condition": "Sprained Ankle" }
+  ]
+  
