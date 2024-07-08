@@ -1,36 +1,27 @@
-import React, { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Sidebar from './components/Sidebar';
-import TopMenu from './components/TopMenu/TopMenu';
-import './App.css';
-
-import routes from './routes';
-
-
-
-const App: React.FC = () => {
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-
-  const toggleSidebar = () => {
-    setIsSidebarOpen(!isSidebarOpen);
-  };
-
+// App.tsx
+import React from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Sidebar from "./components/sidebar";
+import ProtectedRoute from "./ProtectedRoute";
+import Login from "./screens/Login/login"; // Assuming you have a Login component
+function App() {
   return (
-    <Router>
-      <div className="App">
-        <Sidebar isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
-        <TopMenu />
-
-        <div className={`content ${isSidebarOpen ? 'shifted' : 'shifted-closed'}`}>
-          <Routes>
-            {routes.map((route, index) => (
-              <Route key={index} path={route.path} element={route.element} />
-            ))}
-          </Routes>
-        </div>
-      </div>
-    </Router>
+    <div className="App">
+       <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Login />} />
+          <Route
+            path="*"
+            element={
+              <ProtectedRoute>
+                <Sidebar />
+              </ProtectedRoute>
+            }
+          />
+        </Routes>
+      </BrowserRouter>
+    </div>
   );
-};
+}
 
 export default App;
